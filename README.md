@@ -1,4 +1,4 @@
-# vue-model
+# josh-admin
 
 > A Vue.js project
 
@@ -42,5 +42,3 @@ src -- vue文件
 static -- 不想被编译的文件放这里,群里朋友说的
 
 pm2.config.json -- pm2进程管理
-
-For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
