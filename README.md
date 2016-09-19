@@ -34,7 +34,10 @@ config --  index.js   proxyTable 修改反代理
 
 mockserver -- nodejs 模拟后端post接口  本地开发前调试
 
-src -- vue文件 vuex + vux +  vue-router + 
+src -- vue文件
+> components 公用资源
+> layers 前后端 协议接口字断
+> pages  单页面应用/单页面   (多页面项目)
 
 static -- 不想被编译的文件放这里,群里朋友说的
 
