@@ -1,0 +1,133 @@
+@import 'css-lessfn.less';
+
+/* 小图标 */
+//.iconH20{
+//	background-image: url('@{urlpath}/icon_h20.png');
+//	background-repeat: no-repeat;
+//	height: 20px;
+//}
+////////////////////////////////////////////////
+.btn{
+   display: inline-block;
+   vertical-align: top;
+   height: 36px;
+   font-size: @fs16;
+   background-color: #fcca00;
+   color:@tcor;
+   padding:0 15px;
+   border:0;
+  &:hover{
+    background-color: #f1b105;
+    color:@tcor;
+    text-decoration: none;
+  }
+}
+
+.btnA{
+  display: inline-block;
+  vertical-align: top;
+  padding:0 15px;
+  .border-radius (@radius: 3px);
+  &:hover{
+    text-decoration: none;
+  }
+}
+
+////////////////////////////////////
+//选择文件
+.btn-file{
+  display: inline-block;
+  vertical-align: top;
+  height: 29px;
+  line-height: 27px;
+  font-size: @fs14;
+  padding:0 15px;
+  border: #1b9efc 1px solid;
+  background-color: #fff;
+  color: #1b9efc;
+  .border-radius (@radius: 3px);
+  &:hover{
+    color: #1b9efc;
+    background-color: #efefef;
+    text-decoration: none;
+  }
+}
+
+////////////////////////////////////
+//发送验证码
+.btn-code{
+  display: inline-block;
+  vertical-align: top;
+  height:36px;
+  font-size: @fs16;
+  padding:0 15px;
+  border: #fbc92e 1px solid;
+  background-color: #fff;
+  color: #fbc92e;
+  .border-radius (@radius: 3px);
+  &:hover{
+    color: #fbc92e;
+    background-color: #fff9e8;
+    text-decoration: none;
+  }
+}
+//发送验证码 禁用
+.btn-codeDisabled,
+.btn-codeDisabled:hover
+{
+  border:#bbbbbb 1px solid;
+  background-color: #fff;
+  color:#999;
+  cursor: not-allowed;
+}
+
+////////////////////////////////////   外观调整  ////////////////////////////////////////////////////////
+//禁用样式
+.btn-disabled,
+.btn-disabled:hover
+{
+  background-color: #e6e6e6;
+  color:#999;
+  cursor: not-allowed;
+}
+
+//按钮尺寸（高度）
+.btnH-lg{
+  height: 45px;
+  font-size: 18px;
+}
+.btnH-sm{
+  height: 28px;
+  font-size: 14px;
+  line-height: 28px;
+}
+.btnH-m{
+  height:32px;
+  font-size: 14px;
+  line-height: 32px;
+}
+
+
+//按钮尺寸（长度）
+.btnW-block{
+  display: block;
+  width: 100%;
+}
+.btnW-lg{
+  width: 135px;
+}
+
+.btnW-criteria{
+  width: 100px;
+}
+
+//按钮样式
+.btnSty1{
+  background-color: #fff;
+  border: 1px solid #ddd;
+  color: #333;
+  &:hover{
+    color: #333;
+    background-color: #fff;
+  }
+}

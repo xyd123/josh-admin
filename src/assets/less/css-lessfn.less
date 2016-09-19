@@ -1,0 +1,219 @@
+/*定义路径*/
+@urlpath:'../images';
+
+/*定义背景颜色*/
+@bgcor1: #433c47;
+@bgcor2: #fff;
+@bgcor3: #eef0f1;
+@bgcor4: #ffd3c2;
+
+/*文字*/
+@tcor: #fff;
+@tcor1: #333;
+@tcor2: #999;
+@tcor3: #009cff;
+@tcor4: #fe3e1f;
+@tcor5: #bbb;
+@tcor6: #666;
+@tcor7: #ffc000;
+
+/*分割线*/
+@lincor1: #ddd;
+@lincor2: #eee;
+
+/*字体大小*/
+@fs14:14px;
+@fs16:16px;
+@fs18:18px;
+
+/*屏幕尺寸*/
+@screen-xs-max:767px;
+@screen-sm-min:768px;
+@screen-sm-max:991px;
+@screen-md-min:992px;
+@screen-md-max:1199px;
+@screen-lg-min:1200px;
+
+/*@_1
+*纯css三角型
+*三角型在上下边：@t: -1px(下边) 1px(上边) @l:0px
+*三角型在左右边：@t:0px  				  @l: 1px(左边) -1px(右边)
+*/
+.arrowBase(@w:30px, @t:-1px, @l:0px){
+	width:0px;
+	height:0px;
+	font-size:0;
+	border-width:@w;
+	z-index: 1;
+	.arrow-up-innr{
+		position: absolute;
+		left:-@w + @l;
+		top:-@w + @t;
+		overflow: hidden;
+		width:0px;
+		height:0px;
+		font-size:0;
+		border-width:@w;
+		z-index: 2;
+	}
+}
+/*下边 */
+.arrowB(@bcolor:#333333, @bgcolor:#EFEFEF){
+	border-color:@bcolor transparent transparent;
+	border-style:solid dashed dashed;
+	.arrow-up-innr{
+		border-color:@bgcolor transparent transparent;
+		border-style:solid dashed dashed;
+	}
+}
+
+/* 上边 */
+.arrowT(@bcolor:#333333, @bgcolor:#EFEFEF){
+	border-color:transparent transparent @bcolor;
+	border-style:dashed dashed solid ;
+	.arrow-up-innr{
+		border-color:transparent transparent @bgcolor;
+		border-style:dashed dashed solid ;
+	}
+}
+
+/* 右边 */
+.arrowR(@bcolor:#333333, @bgcolor:#EFEFEF){
+	border-color:transparent transparent transparent @bcolor ;
+	border-style:dashed dashed dashed solid;
+	.arrow-up-innr{
+		border-color:transparent transparent transparent @bgcolor;
+		border-style:dashed dashed dashed solid;
+	}
+}
+
+/* 左边 */
+.arrowL(@bcolor:#333333, @bgcolor:#EFEFEF){
+	border-color:transparent  @bcolor transparent transparent ;
+	border-style:dashed solid dashed dashed;
+	.arrow-up-innr{
+		border-color:transparent  @bgcolor transparent transparent;
+		border-style:dashed solid dashed dashed;
+	}
+}
+
+
+/**
+ * 设置透明度
+ * 默认0.5
+ */
+.opacity(@opacityVal:0.5){
+    @opacityVal_100: @opacityVal*100;
+    filter: ~'alpha(opacity=@{opacityVal_100})';
+    opacity: @opacityVal;
+}
+
+/**
+ * 简单的圆角半径
+ * 默认5px
+ */
+.border-radius (@radius: 5px) {
+  -webkit-border-radius: @radius;
+	-moz-border-radius: @radius;
+	border-radius: @radius;
+}
+
+/**
+ * 四角的半径定制
+ * 默认都为5px
+ */
+.border-radius-custom (@topleft: 5px, @topright: 5px, @bottomleft: 5px, @bottomright: 5px) {
+	-webkit-border-radius: @topleft @topright @bottomright @bottomleft;
+	-moz-border-radius: @topleft @topright @bottomright @bottomleft;
+	border-radius: @topleft @topright @bottomright @bottomleft;
+}
+
+/**
+ * 方块阴影 Box Shadow
+ */
+.box-shadow (@x: 0px, @y: 3px, @blur: 5px, @color: #000) {
+	-webkit-box-shadow: @x @y @blur @color;
+	-moz-box-shadow: @x @y @blur @color;
+	box-shadow: @x @y @blur @color;
+}
+.box-shadow-alpha (@x: 0px, @y: 3px, @blur: 5px, @alpha: 0.5) {
+	-webkit-box-shadow: @x @y @blur rgba(0, 0, 0, @alpha);
+	-moz-box-shadow: @x @y @blur rgba(0, 0, 0, @alpha);
+	box-shadow: @x @y @blur rgba(0, 0, 0, @alpha);
+}
+
+/**
+ * 元素过渡效果 Transition
+ */
+.transition (@prop: all, @time: 1s, @ease: linear) {
+	-webkit-transition: @prop @time @ease;
+	-moz-transition: @prop @time @ease;
+	-o-transition: @prop @time @ease;
+	-ms-transition: @prop @time @ease;
+	transition: @prop @time @ease;
+}
+
+/**
+ * 转换/旋转 Transform
+ */
+.transform (@rotate: 90deg, @scale: 1, @skew: 1deg, @translate: 10px) {
+	-webkit-transform: rotate(@rotate) scale(@scale) skew(@skew) translate(@translate);
+	-moz-transform: rotate(@rotate) scale(@scale) skew(@skew) translate(@translate);
+	-o-transform: rotate(@rotate) scale(@scale) skew(@skew) translate(@translate);
+	-ms-transform: rotate(@rotate) scale(@scale) skew(@skew) translate(@translate);
+	transform: rotate(@rotate) scale(@scale) skew(@skew) translate(@translate);
+}
+
+/**
+ * 颜色渐变 Gradients (线性渐变 Linear Gradient)
+ */
+.gradient (@origin: left, @start: #ffffff, @stop: #000000) {
+	background-color: @start;
+	background-image: -webkit-linear-gradient(@origin, @start, @stop);
+	background-image: -moz-linear-gradient(@origin, @start, @stop);
+	background-image: -o-linear-gradient(@origin, @start, @stop);
+	background-image: -ms-linear-gradient(@origin, @start, @stop);
+	background-image: linear-gradient(@origin, @start, @stop);
+}
+
+/**
+ * 颜色渐变 Gradients (快速渐变 Quick Gradient)
+ */
+.quick-gradient (@origin: left, @alpha: 0.2) {
+	background-image: -webkit-linear-gradient(@origin, rgba(0,0,0,0.0), rgba(0,0,0,@alpha));
+	background-image: -moz-linear-gradient(@origin, rgba(0,0,0,0.0), rgba(0,0,0,@alpha));
+	background-image: -o-linear-gradient(@origin, rgba(0,0,0,0.0), rgba(0,0,0,@alpha));
+	background-image: -ms-linear-gradient(@origin, rgba(0,0,0,0.0), rgba(0,0,0,@alpha));
+	background-image: linear-gradient(@origin, rgba(0,0,0,0.0), rgba(0,0,0,@alpha));
+}
+
+/* 文字超出部分打点 */
+.text-ellipsis (){
+	overflow:hidden;
+	white-space:nowrap;
+}
+
+/* 定义图片居中的通用样式
+ * *font-size:175px; (height*0.873)
+ */
+.imgCenter ( @height ){
+	display: table-cell;
+	text-align: center;
+	vertical-align: middle;
+	*display: block;
+	*font-family: Arial;
+	*line-height: 0;
+	*vertical-align: auto;
+	*font-size: @height*0.873;
+	img {
+		vertical-align: middle;
+	}
+}
+
+.minHeight (@height){
+	height: auto !important;
+	height: @height;
+	min-height: @height;
+}
+
+

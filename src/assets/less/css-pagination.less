@@ -1,0 +1,230 @@
+@import 'css-lessfn.less';
+
+/**
+ *  通用page切换
+ */
+//@pag-a-color:#999999;/* 默认字体颜色 */
+//@pag-a-background-color:#fff; /* 默认背景色 */
+//@pag-a-border-color:#fff;/* 默认边框颜色 */
+//@pag-ahover-color:#fff; /* hover 字体颜色 */
+//@pag-ahover-border-bcolor:#63afed; /* hover 边框颜色 */
+//@pag-no-color:#aaa;/* 不能点击字体颜色 */
+//@pag-no-border-color:#fff; /* 不能点击边框颜色 */
+//@pag-cur-color:#3d9ee9; /* 选中状态字体颜色 */
+//@pag-cur-background-color:#e1eff9; /* 选中状态背景颜色 */
+//@pag-cur-border-color:#63afed; /*选中状态边框颜色 */
+//.pagination .page-prev, .pagination .page-next, .pagination .page-skip button{
+//    background-image:url('@{urlpath}/page_icon.png'); background-repeat:no-repeat;
+//   .border-radius (@radius: 3px);
+//}
+//.pagination{
+//  height:26px;
+//  float:left;
+//  position:relative;
+//  left:50%;
+//  padding:20px 0 10px;
+//}
+//.page-bottom{
+//  position:relative;
+//  left:-50%;
+//  height:25px;
+//}
+//*html .page-bottom{
+//  float:left;
+//}
+//.pagination a,
+//.page-break,
+//.page-skip,
+//.page-cur{
+//  float:left;
+//  height:20px;
+//  line-height:20px;
+//  min-width:11px;
+//  _width:auto;
+//  padding:3px 6px;
+//  margin-right:2px;
+//  text-align:center;
+//  white-space:nowrap;
+//  vertical-align:middle;
+//}
+//.pagination a{
+//  /*background-color:@pag-a-background-color;
+//  border:solid 1px @pag-a-border-color;*/
+//  /*.border-radius (@radius: 2px);*/
+//  color:@pag-a-color;
+//  &:hover{
+//    background-color:@pag-ahover-border-bcolor;
+//    color:@pag-ahover-color;
+//    .border-radius (@radius: 3px);
+//    text-decoration:none;
+//  }
+//}
+//
+//.pagination .page-prev,
+//.pagination .page-next{
+//  width: 24px;
+//  border:#cecfd1 1px solid;
+//  background-color: #f8f8f8;
+//  padding:2px 0;
+//
+//  &:hover{
+//    background-color: #f8f8f8;
+//  }
+//}
+//.pagination .page-prev{
+//  background-position:9px 0;
+//  margin-right:8px;
+// /* &:hover{
+//    background-position:-2px 1px;
+//  }*/
+//}
+//.pagination .prev-no,
+//.pagination .prev-no:hover{
+//  background-position:9px -52px;
+//  /*border-color:@pag-no-border-color;
+//  color:@pag-no-color;*/
+//  cursor:default;
+//}
+//.pagination .page-next{
+//  background-position:9px -26px;
+//  margin-left:6px;
+// /* &:hover{
+//    background-position:40px -19px;
+//  }*/
+//}
+//.pagination .next-no, .pagination .next-no:hover{
+//  background-position:9px -78px;
+// /* border-color:@pag-no-border-color;*/
+//  /*color:@pag-no-color;*/
+//  cursor:default;
+//}
+//.pagination .page-cur{
+//  background-color:@pag-cur-background-color;
+///*  border:1px solid @pag-cur-border-color;*/
+//  color:@pag-cur-color;
+//  .border-radius (@radius: 3px);
+//  cursor:default;
+//}
+//.pagination .page-skip{
+//  color:#3d9ee9;
+//  width:auto;
+//
+//}
+//
+//.pagleft{
+//  float:left;
+//  left:0;
+//  overflow:hidden;
+//  & .page-bottom{
+//    left:0;
+//  }
+//}
+//
+//.pagright{
+//  float:right;
+//  left:0;
+//  overflow:hidden;
+//  & .page-bottom{
+//    left:0;
+//  }
+//}
+
+
+/**  **/
+//.pagskin2{
+//  a{
+//    color:#3d9ee9;
+//    &:hover{
+//      background-color:#e1eff9;
+//      color:#3d9ee9;
+//    }
+//  }
+//  .page-cur{
+//     background-color:#e1eff9;
+//     color:#3d9ee9;
+//  }
+// .page-break{
+//     color:#3d9ee9;
+// }
+// .page-prev,
+// .page-next{
+//    background-color: #fff;
+//      &:hover{
+//        background-color: #fff;
+//      }
+//   }
+//}
+
+.pagination{
+  position:relative;
+  left:50%;
+}
+.ui-minpage{
+  float: left;
+  position:relative;
+  left:-50%;
+  a,
+  span,
+  .ui-page-active{
+    float: left;
+    min-width:20px;
+    height: 20px;
+    line-height:20px;
+    vertical-align:middle;
+    text-align:center;
+    white-space:nowrap;
+    padding:0 4px;
+    margin:0 4px;
+    font-size: 12px;;
+    _width:auto;
+
+    &.ui-page-prev, &.ui-page-next{
+      overflow: hidden;
+    }
+  }
+  a{
+    color: #333;
+    &:hover{
+      text-decoration:none;
+    }
+  }
+  .ui-page-active{
+    background-color: #e0e0e0;
+    color: #333;
+  }
+
+
+  .ui-page-prev{
+    width:auto;
+    padding-right: 15px;
+    padding-left: 0;
+    border-right: #333 1px solid;
+    margin-right:10px;
+    &:hover{
+
+    }
+  }
+  .ui-prev-no{
+    cursor: not-allowed;
+    &:hover{
+        color:#333;
+    }
+  }
+  .ui-page-next{
+    width:auto;
+    padding-left: 15px;
+    padding-right: 0;
+    border-left: #333 1px solid;
+    margin-left:10px;
+    &:hover{
+
+    }
+  }
+  .ui-next-no{
+    cursor: not-allowed;
+    
+    &:hover{
+      color:#333;
+    }
+  }
+}
